@@ -1,0 +1,27 @@
+plugins {
+    id 'com.android.library'
+    alias(libs.plugins.kotlin.android)
+}
+
+
+android {
+    resourcePrefix "optimus_"     //这里随便填
+
+    defaultConfig {
+        targetSdkVersion 23
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    namespace 'com.optimus.edittextfield'
+}
+
+dependencies {
+    implementation(libs.kotlin.stdlib.jdk8)
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.12'
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+}
